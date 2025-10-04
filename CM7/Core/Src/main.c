@@ -324,9 +324,17 @@ void StartDefaultTask(void const * argument)
   MX_LWIP_Init();
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
+  int cnt  = 0;
   for(;;)
   {
-    osDelay(1);
+	  if( ++cnt == 10)
+	  {
+		  cnt  = 0;
+
+		  BSP_LED_Toggle(LED_GREEN);
+	  }
+
+    osDelay(100);
   }
   /* USER CODE END 5 */
 }
