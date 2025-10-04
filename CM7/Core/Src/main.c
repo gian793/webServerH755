@@ -209,7 +209,6 @@ Error_Handler();
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -324,17 +323,19 @@ void StartDefaultTask(void const * argument)
   MX_LWIP_Init();
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
-  int cnt  = 0;
+
+  int cnt = 0;
   for(;;)
   {
-	  if( ++cnt == 10)
+	  if(++cnt == 10)
 	  {
-		  cnt  = 0;
+		  cnt = 0;
+		  BSP_LED_Toggle(LED_YELLOW);
 
-		  BSP_LED_Toggle(LED_GREEN);
+		  printf("CNT: %d", cnt);
 	  }
 
-    osDelay(100);
+	  osDelay(100);
   }
   /* USER CODE END 5 */
 }
