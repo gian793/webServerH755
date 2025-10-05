@@ -330,7 +330,7 @@ void StartDefaultTask(void const * argument)
 	  if(++cnt == 10)
 	  {
 		  cnt = 0;
-		  BSP_LED_Toggle(LED_YELLOW);
+		  BSP_LED_Toggle(LED_GREEN);
 
 		  printf("CNT: %d", cnt);
 	  }
