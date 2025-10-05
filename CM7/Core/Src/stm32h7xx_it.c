@@ -204,4 +204,9 @@ void ETH_IRQHandler(void)
 
 /* USER CODE BEGIN 1 */
 
+void BSP_PB_Callback(Button_TypeDef Button)
+{
+	BSP_LED_Toggle(LED_RED);
+}
+
 /* USER CODE END 1 */
